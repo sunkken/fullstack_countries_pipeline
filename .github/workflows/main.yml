@@ -28,6 +28,7 @@ jobs:
         context: .
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/countries:latest
+        build-args: VITE_WEATHER_API_KEY=${{ secrets.VITE_WEATHER_API_KEY }}
 
   deploy:
     needs: build
