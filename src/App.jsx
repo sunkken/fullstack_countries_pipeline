@@ -5,7 +5,7 @@ import countryService from './services/countries'
 import weatherService from './services/weather'
 
 function App() {
-  const weather_api_key = process.env.VITE_WEATHER_API_KEY
+  const weather_api_key = import.meta.env.VITE_WEATHER_API_KEY
   const weather_icon_base_url = "https://openweathermap.org/img/wn/"
   const [allCountries, setAllCountries] = useState([])
   const [filterName, setFilterName] = useState('')
