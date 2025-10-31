@@ -10,6 +10,8 @@ COPY . .
 
 RUN npm ci
 
+RUN echo "Building with key: $VITE_WEATHER_API_KEY"
+
 RUN npm run build
 
 # Production
