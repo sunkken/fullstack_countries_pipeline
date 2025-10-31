@@ -3,10 +3,10 @@ FROM node:20 AS build-stage
 
 WORKDIR /usr/src/app
 
-COPY . .
-
 ARG VITE_WEATHER_API_KEY
 ENV VITE_WEATHER_API_KEY=${VITE_WEATHER_API_KEY}
+
+COPY . .
 
 RUN npm ci
 
