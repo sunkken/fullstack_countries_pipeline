@@ -28,3 +28,12 @@ jobs:
         context: .
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/countries:latest
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Trigger Render Deployment
+        run: |
+          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
